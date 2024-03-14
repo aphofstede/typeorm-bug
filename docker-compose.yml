@@ -1,0 +1,15 @@
+version: "3"
+services:
+  database:
+    image: postgres:14
+    restart: always
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=test
+    ports:
+      - '5433:5432' # Exposed on host on port 5433
+    networks:
+      - app-network
+networks:
+  app-network:
